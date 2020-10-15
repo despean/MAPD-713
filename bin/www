@@ -88,5 +88,8 @@ function onListening() {
   var addr = server.address();
   debug(`Listening on http://${addr.address}:${addr.port}`);
   debug('EndPoints: { GET }')
-  debug('EndPoints:')
+  debug(' /products/')
+  debug(' /products/:id')
+  debug('EndPoints:{ POST }')
+  debug('/products/add')
 }
