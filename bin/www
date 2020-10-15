@@ -92,4 +92,6 @@ function onListening() {
   debug(' /products/:id')
   debug('EndPoints:{ POST }')
   debug('/products/add')
+  debug('EndPoints:{ DELETE }')
+  debug('/products/remove_all')
 }
