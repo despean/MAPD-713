@@ -31,10 +31,12 @@ router.get('/:id', function(req, res, next) {
 router.post('/add', function(req, res, next) {
     console.log(" >  Post request made to add product")
     countPost++
-    Prod.create(req.body, function(err, data){
-        console.log(" < Sending POST request Response")
-        res.json(data);
-    })
+    if (req.body != undefined){
+        Prod.create(req.body, function(err, data){
+            console.log(" < Sending POST request Response")
+            res.json(data);
+        })
+    }
     console.log(`Processed Request Count--> Get:${countGet}, Post:${countPost}`)
 });
 
@@ -51,7 +53,7 @@ router.delete('/remove_all', function(req, res, next) {
         }
         res.send({"Message":"All data deleted"})
     })
-    console.log(`Processed Request Count--> Get:${countGet}, Post:${countPost}`)
+    console.log(`Processed Request Count --> Get:${countGet}, Post:${countPost}`)
 });
 
 Prod.on('create', function() {
